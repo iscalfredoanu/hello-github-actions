@@ -1,0 +1,39 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<div style="text-align:center">
+  <h1>
+    {{title}}
+  </h1>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item" [ngClass]="{'active': currentPage ===(i+1)}" *ngFor="let page of pages;let i = index" (click)="search($event, i)">
+        <span class="page-link" >{{i + 1}}</span>
+      </li>
+    </ul>
+  </nav>
+  <input type="search" class="form-control" [(ngModel)]="searchName" placeholder="Search..." (keyup)="search($event, 0)" >
+  <div class="main-container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-12" *ngFor="let character of characters">
+          <div class="container mt-2" routerLink="/detail/{{character.id}}">
+              <div class="card">
+                <div class="firstinfo">
+                  <div class="clearfix">
+                      <img  width="150" height="150" class="rounded-circle float-left" [src]="character.image" />
+                  </div>
+                    <div class="row d-flex justify-content-center">
+                      <div class="col-12">
+                        <h2>{{character.name}}</h2>
+                      </div>
+                      <div class="col-12">
+                      <h3 class="text-primary">{{character.species}}</h3>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

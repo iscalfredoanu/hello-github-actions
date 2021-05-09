@@ -1,0 +1,25 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<a href="#" class="btn-flotante">
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="60" height="60" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1200 1200"><path d="M600 0C268.629 0 0 268.629 0 600s268.629 600 600 600s600-268.629 600-600S931.371 0 600 0zm0 276.489l292.969 227.71v419.312H691.406V670.386H508.594v253.125H307.031V504.199L600 276.489z" fill="blue"/></svg>
+</a>
+<div class = "container mt-5">
+  <h2 class = "center">{{name}}</h2>
+  <p class ="center">{{type}}</p>
+  <hr>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Residentes...</h4>
+          <div *ngFor="let character of residentes">
+              <a href="detail/{{character.character_id}}">
+                <img  width="150" height="150" class="rounded-circle float-left" [src]="character.image" />
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
